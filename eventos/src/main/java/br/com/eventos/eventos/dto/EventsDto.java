@@ -1,4 +1,4 @@
-package br.com.eventos.eventos.model.dto;
+package br.com.eventos.eventos.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;

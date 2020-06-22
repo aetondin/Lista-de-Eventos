@@ -8,6 +8,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Notify {
@@ -15,8 +16,14 @@ public class Notify {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private LocalDateTime dtSend;
+	private String subject;
+	private String message;
+	
 	@Enumerated(EnumType.STRING)
 	private NotificationType notification;
+	
+	@ManyToOne
+	private Events events;
 	
 	public Long getId() {
 		return id;
@@ -30,13 +37,30 @@ public class Notify {
 	public void setDtSend(LocalDateTime dtSend) {
 		this.dtSend = dtSend;
 	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
 	public NotificationType getNotification() {
 		return notification;
 	}
 	public void setNotification(NotificationType notification) {
 		this.notification = notification;
 	}
-
+	public Events getEvents() {
+		return events;
+	}
+	public void setEvents(Events events) {
+		this.events = events;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

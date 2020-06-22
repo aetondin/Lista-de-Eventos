@@ -1,4 +1,4 @@
-package br.com.eventos.eventos.validation.dto;
+package br.com.eventos.eventos.dto;
 
 public class FormErrorDto {
 

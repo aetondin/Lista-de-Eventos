@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import br.com.eventos.eventos.validation.dto.FormErrorDto;
+import br.com.eventos.eventos.dto.FormErrorDto;
 
 @RestControllerAdvice
 public class validationHandler {

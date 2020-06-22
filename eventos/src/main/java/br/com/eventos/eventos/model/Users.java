@@ -1,13 +1,24 @@
 package br.com.eventos.eventos.model;
 
+import java.util.Collection;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class Users {
+public class Users implements UserDetails{
 
+	private static final long serialVersionUID = 1L;
+	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
@@ -15,6 +26,28 @@ public class Users {
 	private String phone;
 	private String password;
 	
+	@ManyToMany(cascade = {CascadeType.ALL},fetch= FetchType.EAGER)
+	private List<Profile> profile;
+	
+	public Users() {
+		
+	}
+	
+	public Users(String name, String email, String phone, String password) {
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.password = password;
+	}
+	
+	public Users(Long id, String name, String email, String phone, String password) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.password = password;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -67,6 +100,31 @@ public class Users {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		return true;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return profile;
+	}
+	@Override
+	public String getUsername() {
+		return this.email;
+	}
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+	@Override
+	public boolean isEnabled() {
 		return true;
 	}
 	

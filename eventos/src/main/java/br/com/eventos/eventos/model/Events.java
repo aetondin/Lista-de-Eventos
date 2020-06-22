@@ -22,9 +22,11 @@ public class Events {
 	private LocalDateTime dtEvent;
 	private String title;
 	private String description;
+	
 	@ManyToOne
 	@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
 	private Users userOwner;
+	
 	@ManyToMany
 	@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
 	private List<Users> usersParticipants;
@@ -34,6 +36,15 @@ public class Events {
 	}
 	
 	public Events(LocalDateTime dtEvent, String title, String description, Users userOwner, List<Users> usersParticipants) {
+		 this.dtEvent = dtEvent;
+		 this.title = title;
+		 this.description = description;
+		 this.userOwner = userOwner;
+		 this.usersParticipants = usersParticipants;
+	}
+	
+	public Events(Long id, LocalDateTime dtEvent, String title, String description, Users userOwner, List<Users> usersParticipants) {
+		 this.id = id; 
 		 this.dtEvent = dtEvent;
 		 this.title = title;
 		 this.description = description;
