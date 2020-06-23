@@ -73,7 +73,7 @@ O projeto pode ser executado por um container no docker:
 
 > Para fazer o dowload da imagem, executar o comando abaixo no seu docker:
 ```
-docker push aetondin/lista-de-eventos:latest
+docker pull aetondin/lista-de-eventos:latest
 ```
 
 > Para criar um container e executar a aplicação, usar o seguinte comando:
