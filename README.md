@@ -4,7 +4,7 @@ Avaliação Java, desenvolver um API REST de lista de Eventos.
 
 ## Começando
 
-Essas instruções fornecerão uma cópia do projeto para execução na sua máquina local para fins de avaliação. Consulte implantação para obter notas sobre como implantar o projeto em sua máquina.
+Essas instruções fornecerão uma cópia do projeto para execução na sua máquina local para fins de avaliação. Consulte os tópicos seguintes para obter notas sobre como implantar o projeto em sua máquina.
 
 
 ## Pré-requisitos
