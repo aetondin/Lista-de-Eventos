@@ -21,6 +21,10 @@ Essas instruções fornecerão uma cópia do projeto para execução na sua máq
 - Rodar a aplicação pelo arquivo EventosApplication.java contido no pacote br.com.eventos.eventos.
 - Para ter acesso aos endpoint, é necessário gerar a chave de autorização passando um usuário e senha cadastrados no banco de dados.
 
+```
+- O projeto também pode ser executado pelo docker, informações no final do arquivo:
+```
+
 ## Sobre o projeto
 
 > ### Segurança
@@ -63,5 +67,27 @@ O Arquivo já contém requisições cadastradas para testes.
 - Assim, o Postman automaticamnete enviara o token no cabeçalho da requisição.
 ```
 
+## Docker
 
+O projeto pode ser executado por um container no docker:
+
+> Para fazer o dowload da imagem, executar o comando abaixo no seu docker:
+```
+docker push aetondin/lista-de-eventos:latest
+```
+
+> Para criar um container e executar a aplicação, usar o seguinte comando:
+```
+docker run -d -p 8080:8080 aetondin/lista-de-eventos:latest
+```
+
+
+> E para executar a aplicação direto pelo docker, usar o seguinte comando:
+```
+docker run -it -p 8080:8080 aetondin/lista-de-eventos:latest
+```
+
+## Autor
+
+André Engel Tondin
 
