@@ -39,10 +39,17 @@ Senha: eventos@2020
 O Banco de dados utilizado é o h2, que roda em memório junto com a aplicação, mas nada impede de usarmos um banco de dados diferente.
 Para alterar o banco de dados, basta configurar o arquivo "aplication.properties" que fica dentro de resources.
 
-- Para acessar as tabelas, basta acessar o link:
+- Para acessar as tabelas, basta acessar o link abaixo:
 ```
 http://<<host>>/h2-console/
 ```
 
+> ### OpenAPI
+A aplicação usa o Swagger a fim de documentar os endpoints e sua utilização.
+
+- Para acessar o Swagger, basta acessar o link abaixo:
+```
+http://<<host>>/swagger-ui.html
+```
 
 
