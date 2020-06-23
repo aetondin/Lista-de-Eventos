@@ -52,4 +52,16 @@ A aplicação usa o Swagger a fim de documentar os endpoints e sua utilização.
 http://<<host>>/swagger-ui.html
 ```
 
+## Testando o projeto
+
+Além do swagger, é possível testar os endpoints utlizando o Postman.
+Basta importar o arquivo EventsSantander.postman_collection.json que está disponível junto ao projeto.
+O Arquivo já contém requisições cadastradas para testes.
+
+```
+- Antes de começar, é necessário gerar um token, na opção "Authentication get token", e adicionar o token gerado na variável "token" em "MANAGE ENVIRONMENTS".
+- Assim, o Postman automaticamnete enviara o token no cabeçalho da requisição.
+```
+
+
 
