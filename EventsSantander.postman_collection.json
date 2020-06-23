@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "db9c3bd9-38f7-4441-bff3-728385f4ef02",
+		"name": "EventsSantander",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1,\r\n        \"dtEvent\": \"2020-07-22T10:00:00\",\r\n        \"title\": \"Churrasco com a família 2\",\r\n        \"description\": \"Dia de confraternização com a família!\",\r\n        \"userOwner\": {\r\n                \"id\": 1,\r\n                \"name\": \"André Tondin\",\r\n                \"email\": \"andre.tondin@email.com\",\r\n                \"phone\": \"1152526565\"\r\n            },\r\n        \"usersParticipants\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"André Tondin\",\r\n                \"email\": \"andre.tondin@email.com\",\r\n                \"phone\": \"1152526565\"            \r\n                },\r\n            {\r\n                \"id\": 3,\r\n                \"name\": \"Marcia da Silva\",\r\n                \"email\": \"marcia.silva@email.com\",\r\n                \"phone\": \"1114145252\" \r\n                },\r\n                {\r\n                \"name\": \"Novo Usuário\",\r\n                \"email\": \"novo.usuario@email.com\",\r\n                \"phone\": \"1114145252\"\r\n            }\r\n\r\n        ]\r\n    }"
+				},
+				"url": "http://localhost:8080/events"
+			},
+			"response": []
+		},
+		{
+			"name": "List all events",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/events"
+			},
+			"response": []
+		},
+		{
+			"name": "Get one event by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJBUEkgRXZlbnRvcyIsInN1YiI6IjEiLCJpYXQiOjE1OTI3NDM4OTgsImV4cCI6MTU5MjgzMDI5OH0.6-pH1Dih_rGnuRMYOx3UbGwqoFNAPT3kwCBTwbXLudg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "http://localhost:8080/events/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 3,\r\n        \"dtEvent\": \"2020-06-25T10:00:00\",\r\n        \"title\": \"Churrasco com a família 2 - Nova Data\",\r\n        \"description\": \"Dia de confraternização com a família! *** Atenção, nova data!!! ***\",\r\n        \"usersParticipants\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"André Tondin\",\r\n                \"email\": \"andre.tondin@email.com\",\r\n                \"phone\": \"1152526565\",\r\n                \"password\": \"123456\"\r\n            },\r\n            {\r\n                \"id\": 3,\r\n                \"name\": \"Marcia da Silva\",\r\n                \"email\": \"marcia.silva@email.com\",\r\n                \"phone\": \"1114145252\",\r\n                \"password\": \"123456\"\r\n            }\r\n        ]\r\n    },"
+				},
+				"url": "http://localhost:8080/events/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication get token ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"andre.tondin@email.com\",\r\n    \"password\":\"eventos@2020\"\r\n}"
+				},
+				"url": "http://localhost:8080/auth"
+			},
+			"response": []
+		},
+		{
+			"name": "List all Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Insere usuario\",\r\n        \"email\": \"insere.usuario@email.com\",\r\n        \"phone\": \"1152526565\"\r\n    }"
+				},
+				"url": "http://localhost:8080/users"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
