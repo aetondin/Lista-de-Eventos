@@ -23,9 +23,9 @@ Essas instruções fornecerão uma cópia do projeto para execução na sua máq
 ## Sobre o projeto
 
 Para ter acesso aos endpoint, é necessário gerar a chave de autorização passando um usuário e senha cadastrados no banco de dados.
-** - Usuário para teste:**
+ - Usuário para teste:
 ```
-- __Usuário:__ andre.tondin@email.com
-- __Senha:__ eventos@2020
+- Usuário: andre.tondin@email.com
+- Senha: eventos@2020
 ```
 
